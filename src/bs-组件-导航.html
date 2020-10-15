@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li><a href="">小米商城</a></li>
+        <li><a href="">MIUI</a></li>
+    </ul>
+    <!--    导航内容切换
+    data-toggle="tab"
+    tab-content
+    tab-pane
+
+    -->
+    <div>
+        <ul class="nav nav-tabs">
+            <li><a href="#email" class="active" data-toggle="tab">邮箱注册</a></li>
+            <li><a href="#phone" data-toggle="tab">手机注册</a></li>
+        </ul>
+<!--        切换内容-->
+        <div class="tab-content">
+            <div id="email" class="tab-pane active" >
+                显示邮箱注册的内容
+            </div>
+            <div id="phone" class="tab-pane">显示手机注册的内容</div>
+        </div>
+
+    </div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">欣欣影城</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">电影</a></li>
+            <li class="disabled"><a href="#">电视剧</a></li>
+            <li><a href="#">港台</a></li>
+            <li><a href="#">欧美</a></li>
+            <li><a href="#">伦理</a></li>
+            <li><a href="#">福利</a></li>
+        </ul>
+    </nav>
+    <ol class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">电影</a></li>
+        <li class="active">最新电影</li>
+    </ol>
+</div>
+
+</body>
+</html>

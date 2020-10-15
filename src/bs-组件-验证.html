@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--1.bootstrap样式-->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <!--2.验证规则样式-->
+    <link href="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
+    <!--3.jquery 插件-->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <!--4.核心验证文件-->
+    <script src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+    <!--5.中文校验-->
+    <script src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/language/zh_CN.js"></script>
+    <style type="text/css">
+        body {
+            background-size: 100% 100%;
+            background: url("img/bg.jpg") no-repeat fixed;
+        }
+
+        .form-group {
+            margin: 40px auto;
+        }
+
+        #login_box {
+            min-height: 300px;
+            margin-top: 30px;
+            padding: 20px 0px;
+            border-radius: 15px;
+            background: #ffffff;
+            color: #b2b2b2;
+        }
+
+        .head-title {
+            color: white;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#login").bootstrapValidator({
+                    // 全局的默认的错误信息提示
+                    message: "数据校验不通过",
+                    //错误信息高亮显示
+                    feedbackIcons: {
+                        //通过验证输入框状态
+                        valid: "glyphicon glyphicon-ok",
+                        //验证失败输入框状态
+                        invalid: "glyphicon glyphicon-remove",
+                        //验证中输入框状态
+                        validating: "glyphicon glyphicon-refresh"
+                    },
+                    fields: {
+                        username: {
+                            message: "用户名不符合规范",
+                            // 验证规则
+                            validators: {
+                                notEmpty: {
+                                    message: "用户名不能为空"
+                                },
+                                //
+                                // 字母开头 + 数字  最小不能小于8 长度不能超过16
+                                // 自定义的验证规则
+                                regexp: {
+                                    regexp: "^[a-zA-Z][a-zA-Z0-9]{7,15}$",
+                                    message: "用户名必须是字母开头长度在8-16之间"
+                                }
+                            }
+                        },
+                    }
+                    // 密码校验规则 必须是大写字母开头 长度是不能小于 6
+                }
+            )
+        })
+
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <!--
+      1.使用表单时需要用form-group控制每一个组件
+      2.control-label 使label标签和文本对齐
+      3.让div居中
+      4.添加背景图片
+  -->
+    <div class="row">
+        <header class="page-header text-center">
+            <h1 class="head-title">用户登录页面</h1>
+        </header>
+        <div class="col-lg-6 col-lg-offset-3" id='login_box'>
+            <form id="login" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">用户</label>
+                    <div class="col-lg-7">
+                        <input name="username" class="form-control" type="text" placeholder="请输入名字"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">密码</label>
+                    <div class="col-lg-7">
+                        <input name="password" class="form-control" type="password" placeholder="请输入密码"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-3 col-lg-3">
+                        <button type="submit" class="btn-default form-control">登录</button>
+                    </div>
+                    <div class="col-lg-offset-1 col-lg-3">
+                        <button type="submit" class="btn-default form-control">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
